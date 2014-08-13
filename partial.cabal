@@ -6,7 +6,8 @@ license:             MIT
 license-file:        LICENSE
 author:              Phil Freeman
 maintainer:          paf31@cantab.net
-copyright:           Copyright (c) Phil Freeman 2014 
+copyright:           Copyright (c) Phil Freeman 2014
+homepage:            https://github.com/paf31/partial
 category:            Control
 build-type:          Simple
 cabal-version:       >=1.10
