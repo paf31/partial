@@ -1,7 +1,10 @@
-{-# LANGUAGE Rank2Types #-}
-{-# LANGUAGE NullaryTypeClasses #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE RankNTypes #-}
 
-module Control.Partial where
+module Control.Partial
+  ( Partial
+  , partial
+  ) where
 
 import Unsafe.Coerce (unsafeCoerce)
 
@@ -17,8 +20,12 @@ import Unsafe.Coerce (unsafeCoerce)
 class Partial
 
 -- |
+-- Newtype wrapper for partial function, to aid in type inference.
+--
+newtype Wrapper r = Wrapper ((Partial) => r)
+
+-- |
 -- This function can be used to evaluate a partial function
 --
 partial :: ((Partial) => r) -> r
-partial = ($ ()) . unsafeCoerce
-            
+partial f = unsafeCoerce (Wrapper f) ()
