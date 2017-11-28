@@ -1,5 +1,5 @@
 name:                partial
-version:             0.1.0.0
+version:             1.0.0.0
 synopsis:            A nullary type class for partial functions
 description:         
 license:             MIT
