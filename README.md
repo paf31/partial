@@ -7,12 +7,10 @@ A nullary type class for partial functions
 Use the `Partial` type class to track your partial functions. For example:
 
 ```haskell
-{-# LANGUAGE NullaryTypeClasses #-}
-
 import Data.List.Partial
 
 cadr :: (Partial) => [a] -> a
-cadr = head . head
+cadr = head . tail
 ```
 
 As an application developer, either opt into partial functions globally by declaring an instance of the `Partial` type class:
